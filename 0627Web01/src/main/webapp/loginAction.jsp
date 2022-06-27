@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import = "User.UserDAO" %> <!-- DAO인스턴스 -->
+<%@ page import = "user.UserDAO" %> <!-- DAO인스턴스 -->
 <%@ page import = "java.io.PrintWriter" %> <!-- 출력 도와주는 객체 -->
 <% request.setCharacterEncoding("UTF-8"); %>
 
 
+
 <!-- jsp에서 클래스의 setter함수를 호출한것과 마찬가지 -->
-<jsp:useBean id="user" class="User.User" scope="page"/>
+<jsp:useBean id="user" class="user.User" scope="page"></jsp:useBean>
 <jsp:setProperty name = "user" property="userID"/>
 <jsp:setProperty name = "user" property="userPassword"/>
 
@@ -54,3 +55,4 @@
 	%>
 	</body>
 </html>
+

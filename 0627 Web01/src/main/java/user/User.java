@@ -1,9 +1,9 @@
-package User;
+package user;
 
 public class User {
-	private String userID; 
+	private String userID;
 	private String userPassword;
-	private String userName; 
+	private String userName;
 	private String userGender;
 	
 	public String getUserID() {
@@ -15,8 +15,8 @@ public class User {
 	public String getUserPassword() {
 		return userPassword;
 	}
-	public void setUserPassword(String userPassword) {
-		this.userPassword = userPassword;
+	public void setUserPassword(String userPW) {
+		this.userPassword = userPW;
 	}
 	public String getUserName() {
 		return userName;
@@ -31,15 +31,10 @@ public class User {
 		this.userGender = userGender;
 	}
 	
-	
 	@Override
 	public String toString() {
-		return "User [userID=" + userID + ", userPassword=" + userPassword + ", userName=" + userName + ", userGender="
-				+ userGender + "]";
+		return "User [userID=" + userID + ", userPassword=" + userPassword + ", userName=" + userName + ", userGender=" + userGender
+				+ "]";
 	}
-	
-	
-	
-	
 	
 }

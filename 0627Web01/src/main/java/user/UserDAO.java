@@ -1,4 +1,4 @@
-package User;
+package user;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -22,7 +22,7 @@ public class UserDAO {
 			String dbId = "root";
 			String dbPassword = "0000";
 			
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbId, dbPassword);
 			
 		} catch(Exception e) {
@@ -33,7 +33,7 @@ public class UserDAO {
 	
 	//로그인 기능 수행 함수. 로그인 화면에서 유저가 아이디 비번을 치고 밑의 로그인 버튼을 눌렀을때 실행
 	public int login(String userID, String userPassword) {
-		String SQL = "SELECT userPassword FROM TABLE_USER WHERE userID=?";
+		String SQL = "SELECT userPassword FROM table_user WHERE userID=?";
 		//실행할 쿼리, . 유저가 입력한 아이디에 해당하는 비밀번호를 가져온다
 		try {
 			System.out.println("conn:"+conn);
