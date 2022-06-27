@@ -17,7 +17,7 @@ public class UserDAO {
 	//생성자
 	public UserDAO() {
 		try {
-			String dbURL = "jdbc:mysql://localhost:3306/JSP_TEST?serverTimzone=UTC";
+			String dbURL = "jdbc:mysql://localhost:3306/JSP_TEST?serverTimezone=UTC";
 			//Java Data Base Connectivity
 			String dbId = "root";
 			String dbPassword = "0000";
@@ -36,6 +36,7 @@ public class UserDAO {
 		String SQL = "SELECT userPassword FROM TABLE_USER WHERE userID=?";
 		//실행할 쿼리, . 유저가 입력한 아이디에 해당하는 비밀번호를 가져온다
 		try {
+			System.out.println("conn:"+conn);
 			pstmt = conn.prepareStatement(SQL); //문자열 쿼리를 pstmt에 대입
 			pstmt.setString(1, userID); //첫번째 물음표에 userID값 대입
 			//프로그래밍 언어에서 인덱스는 0부터 시작이지만 쿼리는 1부터 시작이다.
@@ -54,6 +55,7 @@ public class UserDAO {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+		
 		return -2; //데이터 베이스 오류
 	}
 }

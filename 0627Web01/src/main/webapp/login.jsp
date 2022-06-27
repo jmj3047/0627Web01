@@ -77,21 +77,22 @@
 
 	</head>
 	<body class="text-center">
-	
+		
+		<!-- form안의 데이터들이 submit이 되면 name의 이름을 가지고 백에 날아감 -->
 		<main class="form-signin w-100 m-auto">
-			<form action="loginAction" method="POST">
+			<form action="loginAction.jsp" method="POST">
 				<img class="mb-4" src="resource/css/assets/brand/bootstrap-logo.svg" alt=""
 					width="72" height="57">
 				<h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 	
 				<div class="form-floating">
-					<input type="email" class="form-control" id="floatingInput"
-						placeholder="name@example.com"> <label for="floatingInput">Email
-						address</label>
+					<input type="email" class="form-control" id="userID" name = "userID"
+					placeholder="name@example.com"> <label for="userID">Email
+					address or ID</label>
 				</div>
 				<div class="form-floating">
-					<input type="password" class="form-control" id="floatingPassword"
-						placeholder="Password"> <label for="floatingPassword">Password</label>
+					<input type="password" class="form-control" id="userPassword" name="userPassword"
+						placeholder="Password"> <label for="userPassword">Password</label>
 				</div>
 	
 				<div class="checkbox mb-3">

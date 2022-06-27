@@ -23,9 +23,11 @@
 	<%
 		UserDAO userDAO = new UserDAO();
 		int result = userDAO.login(user.getUserID(), user.getUserPassword());
+		System.out.println("loginAction 실행");
 		//로그인함수 실행결과값에 따라서 화면으로 뿌려줄 스크리트 생성
 		if(result == 1){//로그인 성공
 			PrintWriter script = response.getWriter();
+			script.println("로그인 성공");
 			script.println("<script>");
 			script.println("location.href='index.jsp'");
 			script.println("</script>");
