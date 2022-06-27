@@ -6,7 +6,7 @@
 
 
 <!-- jsp에서 클래스의 setter함수를 호출한것과 마찬가지 -->
-<jsp:useBean id="user" class="User.User" scope="page"></jsp:useBean>
+<jsp:useBean id="user" class="User.User" scope="page"/>
 <jsp:setProperty name = "user" property="userID"/>
 <jsp:setProperty name = "user" property="userPassword"/>
 
@@ -35,19 +35,19 @@
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('비밀번호가 틀립니다.')");
-			script.println("history.back()'");
+			script.println("history.back()");
 			script.println("</script>");
 		}else if(result == -1){ //아이디가 없을 시
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('아이디가 존재하지 않습니다.')");
-			script.println("history.back()'"); //뒤로가기
+			script.println("history.back()"); //뒤로가기
 			script.println("</script>");
 		}else if(result == -2){ //데이터베이스 오류
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('데이터 베이스에 문제가 발생했습니다.')");
-			script.println("history.back()'"); //뒤로가기
+			script.println("history.back()"); //뒤로가기
 			script.println("</script>");
 		}
 	
