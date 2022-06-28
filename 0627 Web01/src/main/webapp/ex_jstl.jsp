@@ -33,8 +33,17 @@ int num = 300;
     <!-- //자바영역에 있는 배열에 특정한 숫자가 있으면 화면에 있다고 표시. 없으면 없다고 표시 -->
     <%
     int [] numArr = {3,6,9,12,15,18,21,24,27,30};
+    int target = 7;
     
-    
+    for (int i = 0; i<numArr.length; i++){
+    	if(numArr[i]==target){
+    		out.println("target이 있음");
+    		break;
+    	}else{
+    		out.println("target이 없음");
+    		break;
+    	}
+    }
     
     
     %>
