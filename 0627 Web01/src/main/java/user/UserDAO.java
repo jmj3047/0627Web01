@@ -68,12 +68,12 @@ public class UserDAO {
 			pstmt.setString(4,user.getUserGender()); 
 				// 다른 언어와 달리, SQL 쿼리에서의 인덱스는 1부터 시작
 			
-			return pstmt.executeUpdate(); // 0또는 1
+			return pstmt.executeUpdate(); //정상이면 1
 			
 		} catch (Exception e) {
-			e.printStackTrace(); 
+			e.printStackTrace(); // 중복 발생이나 어떤이유로 예외가 발생하면
 		}
-		return -1;	// 데이터베이스 오류
+		return -1;	// 중복발생
 		
 	}
 	
