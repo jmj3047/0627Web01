@@ -34,18 +34,21 @@
 		script.println("</script>");
 	}
 	// 회원가입 성공
-	if(result==1){ 
+	else if(result==1){ 
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("location.href='login.jsp'");
 		script.println("</script>");
-	} else if(result==-1){ // 중복발생
+	} 
+	// 중복발생
+	else if(result==-1){ 
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("alert('아이디가 이미 존재합니다.')");
 		script.println("history.back()"); // 뒤로가기
 		script.println("</script>");
-	} else{
+	} 
+	else{
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("alert('처리하지 못한 이상한 에러가 발생했습니다.')");
