@@ -43,9 +43,8 @@ int num = 300;
     		out.println("target이 없음");
     		break;
     	}
-    }
-    
-    
+    }    
     %>
+    
 </body>
 </html>
