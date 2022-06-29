@@ -75,6 +75,7 @@
  	<%
 	 // 현재 로그인이 되어있는데 또 로그인할 경우 이미 로그인 되어있음을 알려주기
 	   String userID = null;
+  	   String userName = null;
 	   if(session.getAttribute("userID") != null){ // 세션의 userID가 존재하면 가져오기
 	      
 	      userID = (String) session.getAttribute("userID");

@@ -23,7 +23,7 @@
 <!-- 	로그인이 되어있는 상태에서는 로그인, 회원가입 버튼이 안보이도록
 	로그인이 안되었을때는 로그인, 회원가입 버튼이 보이도록 -->
 
-	<jsp:include page="header.html"></jsp:include>
+	<jsp:include page="header.jsp"></jsp:include>
 
 
 
