@@ -38,6 +38,7 @@
 	
 	// 로그인 함수 실행 결과값에 따라서 화면에 출력할 스크립트 생성
 	if(result==1){ // 로그인 성공
+		session.setAttribute("userID", user.getUserID()); //세션에 userID 갖고오기
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("location.href='index.jsp'");

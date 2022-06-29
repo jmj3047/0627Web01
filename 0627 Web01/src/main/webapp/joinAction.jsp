@@ -21,8 +21,6 @@
 <body>
 
 <%
-
-	
 	// 현재 로그인이 되어있는데 회원가입을 할 경우 로그인되어있음을 알려주기
 	String userID = null;
 	if(session.getAttribute("userID") != null){ // 세션의 userID가 존재하면 가져오기
