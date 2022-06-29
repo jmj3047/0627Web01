@@ -21,6 +21,25 @@
 <body>
 
 <%
+
+	
+	// 현재 로그인이 되어있는데 회원가입을 할 경우 로그인되어있음을 알려주기
+	String userID = null;
+	if(session.getAttribute("userID") != null){ // 세션의 userID가 존재하면 가져오기
+	   
+	   userID = (String) session.getAttribute("userID");
+	
+	}
+	if(userID != null){
+	
+	   PrintWriter script = response.getWriter();
+	   script.println("<script>");
+	   script.println("alert('이미 로그인되었습니다.')");
+	   script.println("location.href='index.jsp'");
+	   script.println("</script>");
+	   
+	}
+
 	UserDAO userDAO = new UserDAO();
 	int result = userDAO.join(user);
 	// 회원가입 함수 실행 결과값에 따라서 화면에 출력할 스크립트 생성
