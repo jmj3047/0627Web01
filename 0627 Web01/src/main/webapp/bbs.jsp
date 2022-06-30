@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import = "java.io.PrintWriter" %>  <!-- 출력 도와주는 객체 -->
+<%@ page import = "bbs.Bbs" %>
+<%@ page import = "bbs.BbsDAO" %>
+<%@ page import = "java.util.ArrayList" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,6 +48,20 @@
 						<td>T</td>
 						<td>2022-06-29</td>
 					</tr>
+					
+					<%
+						int pageNumber = 1; //1페이지로 기본 설정
+						if(request.getParameter("pageNumber")!=null){
+							//게시판 목록화면에 이미 페이지번호가 요청된것이 있다면 그 값으로 페이지 세팅
+							pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
+						}
+						BbsDAO bbsDAO = new BbsDAO();
+						ArrayList<Bbs> list = bbsDAO.getList(pageNumber);
+						for (int i = 0;i<list.size();i++){
+							out.println(list.get(i));
+						}
+						
+					%>
 				</tbody>
 				
 			</table>

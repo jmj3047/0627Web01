@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 // Data Access Object : 데이터에 접근하는 역할을 맡은 객체
 public class UserDAO {
@@ -25,6 +26,12 @@ public class UserDAO {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally {
+			try {
+				pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
@@ -50,6 +57,12 @@ public class UserDAO {
 			return -1; // 아이디가 없음
 		} catch (Exception e) {
 			e.printStackTrace(); // 데이터베이스 오류
+		}finally {
+			try {
+				pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		return -2;
 	}
@@ -72,6 +85,12 @@ public class UserDAO {
 			
 		} catch (Exception e) {
 			e.printStackTrace(); // 중복 발생이나 어떤이유로 예외가 발생하면
+		}finally {
+			try {
+				pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		return -1;	// 중복발생
 		

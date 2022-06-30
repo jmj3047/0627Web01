@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 // Data Access Object : 데이터에 접근하는 역할을 맡은 객체
@@ -26,6 +27,12 @@ public class BbsDAO {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally {
+			try {
+				pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
@@ -57,6 +64,12 @@ public class BbsDAO {
 			
 		} catch (Exception e) {
 			e.printStackTrace(); 
+		}finally {
+			try {
+				pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 			return -1; //데이터 베이스 오류
 	}
@@ -74,6 +87,12 @@ public class BbsDAO {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally {
+			try {
+				pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		return -1; //에러
 	}
@@ -90,6 +109,12 @@ public class BbsDAO {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally {
+			try {
+				pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		return "날짜 오류";
 	}
@@ -101,6 +126,8 @@ public class BbsDAO {
 		String SQL = "select * from BBS where bbsID < ? and bbsAvailable  = 1 order by bbsID desc limit 10";
 		ArrayList<Bbs> list = new ArrayList<Bbs>(); //껍데기 리스트
 		try {
+			
+			
 			pstmt = conn.prepareStatement(SQL);
 			int startNum = getNext() - (pageNumber -1)*10;
 			pstmt.setInt(1, startNum); //해당 페이지의 시작번호
@@ -120,6 +147,12 @@ public class BbsDAO {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally {
+			try {
+				pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		return list; //다 쌓은 리스트 반환
 	}
