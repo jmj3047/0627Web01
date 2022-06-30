@@ -28,7 +28,9 @@ public class UserDAO {
 			e.printStackTrace();
 		}finally {
 			try {
-				pstmt.close();
+				if(pstmt!=null) {
+					pstmt.close();
+				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -59,7 +61,9 @@ public class UserDAO {
 			e.printStackTrace(); // 데이터베이스 오류
 		}finally {
 			try {
-				pstmt.close();
+				if(pstmt!=null) {
+					pstmt.close();
+				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -87,7 +91,9 @@ public class UserDAO {
 			e.printStackTrace(); // 중복 발생이나 어떤이유로 예외가 발생하면
 		}finally {
 			try {
-				pstmt.close();
+				if(pstmt!=null) {
+					pstmt.close();
+				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}

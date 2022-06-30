@@ -29,7 +29,9 @@ public class BbsDAO {
 			e.printStackTrace();
 		}finally {
 			try {
-				pstmt.close();
+				if(pstmt!=null) {
+					pstmt.close();
+				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -45,6 +47,8 @@ public class BbsDAO {
 		try {
 			int num = getNext();
 			String date = getDate();
+			
+			
 			pstmt = conn.prepareStatement(SQL); // 문자열 쿼리 대입
 //			System.out.println("getNext"+getNext());
 			
@@ -66,12 +70,14 @@ public class BbsDAO {
 			e.printStackTrace(); 
 		}finally {
 			try {
-				pstmt.close();
+				if(pstmt!=null) {
+					pstmt.close();
+				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
-			return -1; //데이터 베이스 오류
+		return -1; //데이터 베이스 오류
 	}
 	
 	public int getNext() {
@@ -89,7 +95,9 @@ public class BbsDAO {
 			e.printStackTrace();
 		}finally {
 			try {
-				pstmt.close();
+				if(pstmt!=null) {
+					pstmt.close();
+				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -111,7 +119,9 @@ public class BbsDAO {
 			e.printStackTrace();
 		}finally {
 			try {
-				pstmt.close();
+				if(pstmt!=null) {
+					pstmt.close();
+				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -149,7 +159,9 @@ public class BbsDAO {
 			e.printStackTrace();
 		}finally {
 			try {
-				pstmt.close();
+				if(pstmt!=null) {
+					pstmt.close();
+				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
