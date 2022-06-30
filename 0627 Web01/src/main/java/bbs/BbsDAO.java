@@ -136,13 +136,13 @@ public class BbsDAO {
 		String SQL = "select * from BBS where bbsID < ? and bbsAvailable  = 1 order by bbsID desc limit 10";
 		ArrayList<Bbs> list = new ArrayList<Bbs>(); //껍데기 리스트
 		try {
-			
-			
+			int nextNum = getNext();
+			int startNum = nextNum - (pageNumber -1)*10;
 			pstmt = conn.prepareStatement(SQL);
-			int startNum = getNext() - (pageNumber -1)*10;
+			
 			pstmt.setInt(1, startNum); //해당 페이지의 시작번호
 			rs = pstmt.executeQuery(); //select문에 사용하는 쿼리
-			if(rs.next()) {
+			while(rs.next()) {
 				Bbs bbs = new Bbs();
 				bbs.setBbsID(rs.getInt(1));
 				bbs.setBbsTitle(rs.getString(2));
@@ -157,15 +157,10 @@ public class BbsDAO {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
-			try {
-				if(pstmt!=null) {
-					pstmt.close();
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
+		} /*
+			 * finally { try { if(pstmt!=null) { pstmt.close(); } } catch (SQLException e) {
+			 * e.printStackTrace(); } }
+			 */
 		return list; //다 쌓은 리스트 반환
 	}
 	
