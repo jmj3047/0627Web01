@@ -53,12 +53,14 @@
 					<tr>
 						<td><%=list.get(i).getBbsID() %></td>
 						<td><%=list.get(i).getBbsTitle() %></td>
-						<td><%=list.get(i).getBbsContent() %></td>
+						<td><%=list.get(i).getWriter() %></td>
 						<td><%=list.get(i).getCrDate() %></td>
 					</tr>
 					<%
 						}
 					%>
+					
+					
 				</tbody>
 				
 			</table>
